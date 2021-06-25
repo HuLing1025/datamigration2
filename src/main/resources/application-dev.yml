@@ -1,0 +1,44 @@
+spring:
+  # sqlserver
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://******;DatabaseName=calendar;useSSL=true;
+    username: ******
+    password: ******
+    hikari:
+      max-lifetime: 0
+      maximum-pool-size: 100
+      connection-timeout: 3600000
+      idle-timeout: 3600000
+      minimum-idle: 100
+      read-only: true
+
+  # mongodb
+  data:
+    mongodb:
+      uri: mongodb://root:******@******/?authSource=admin
+      database: linshi_push_com_ireadercity_zhwll_db
+#      username: ******
+#      password: ******
+      option:
+        max-connection-per-host: 100
+        connect-timeout: 3600000
+        threads-allowed-to-block-for-connection-multiplier: 100
+        socket-keep-alive: false
+        max-wait-time: 3600000
+        socket-timeout: 0
+  #      username:
+  #      password:
+
+  # print mongodb sql
+# logging:
+#  level:
+#   org:
+#    springframework:
+#     data:
+#      mongodb:
+#        core: debug
+  # print sql log.
+#logging:
+#  level:
+#    com.youloft.datamigration.dao: debug
